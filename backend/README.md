@@ -1,4 +1,4 @@
-# 📖 Hackerton 　*2025*　機育
+# 📖 Server
 
 - 配布 URL :
 
@@ -24,11 +24,10 @@
 
 ## 1. Development Environment
 
-- Front : HTML, CSS, Javascript
-- Back-end : Nest.js, Docker
+- **BackEnd** : Nest.js, Docker
 - Version & Issue Management : Github, Github Issues
 - Communication tools : Discord, Notion, Github Wiki
-- Service Deploy : 
+- Service Deploy : Netlify
   <br>
 
 ## 2. 採用した開発技術とブランチ戦略
@@ -36,7 +35,6 @@
 ### 「BackEnd」Nest.js
 
 ### ブランチ戦略
-
 
 <br>
 
@@ -60,18 +58,6 @@
 ### 👻Hinata Horiba
 
 - **BackEnd**
-
-<br>
-
-### 😎Yuta
-
-- **FrontEnd**
-
-<br>
-
-### 🐬Lilly
-
-- **FrontEnd**
 
 <br>
 
