@@ -12,3 +12,4 @@ function simulateLectureResponse(lectureData) {
   // 50% の確率で 1、50% で 0 を返す
   return Math.random() < 0.5 ? 1 : 0;
 }
+

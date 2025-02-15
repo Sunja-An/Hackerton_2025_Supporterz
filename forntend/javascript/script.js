@@ -62,3 +62,4 @@ document.getElementById('resetButton').addEventListener('click', function () {
     cell.textContent = "";
   });
 });
+
