@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>講義計画書時間割作成ツール</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- ヘッダー：アプリケーション名 -->
+  <header>
+    <h1>講義計画書時間割作成ツール</h1>
+  </header>
+
+  <main>
+    <!-- 講義情報送信用フォーム -->
+    <section id="lecture-form-section">
+      <form id="lectureForm">
+        <div>
+          <label for="lectureName">講義名:</label>
+          <input type="text" id="lectureName" name="lectureName" required>
+        </div>
+        <div>
+          <label for="dayOfWeek">曜日:</label>
+          <select id="dayOfWeek" name="dayOfWeek" required>
+            <option value="月">月</option>
+            <option value="火">火</option>
+            <option value="水">水</option>
+            <option value="木">木</option>
+            <option value="金">金</option>
+            <option value="土">土</option>
+          </select>
+        </div>
+        <div>
+          <label for="period">時限:</label>
+          <select id="period" name="period" required>
+            <option value="1">1限</option>
+            <option value="2">2限</option>
+            <option value="3">3限</option>
+            <option value="4">4限</option>
+            <option value="5">5限</option>
+            <option value="6">6限</option>
+            <option value="7">7限</option>
+          </select>
+        </div>
+        <div>
+          <label for="lecturerName">講師名:</label>
+          <input type="text" id="lecturerName" name="lecturerName" required>
+        </div>
+        <div>
+          <!-- 講義情報送信ボタン（後方処理の発火点としてdata属性を付与） -->
+          <button type="button" id="submitLecture" data-action="send-lecture-data">講義情報送信</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- おすすめ講義を表示する時間割テーブル -->
+    <table id="scheduleTable" data-type="schedule">
+      <thead>
+        <tr>
+          <th style="width: 10%;"></th>
+          <th style="width: 15%;">月</th>
+          <th style="width: 15%;">火</th>
+          <th style="width: 15%;">水</th>
+          <th style="width: 15%;">木</th>
+          <th style="width: 15%;">金</th>
+          <th style="width: 15%;">土</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1限</th>
+          <td data-day="月" data-period="1"></td>
+          <td data-day="火" data-period="1"></td>
+          <td data-day="水" data-period="1"></td>
+          <td data-day="木" data-period="1"></td>
+          <td data-day="金" data-period="1"></td>
+          <td data-day="土" data-period="1"></td>
+        </tr>
+        <tr>
+          <th>2限</th>
+          <td data-day="月" data-period="2"></td>
+          <td data-day="火" data-period="2"></td>
+          <td data-day="水" data-period="2"></td>
+          <td data-day="木" data-period="2"></td>
+          <td data-day="金" data-period="2"></td>
+          <td data-day="土" data-period="2"></td>
+        </tr>
+        <tr>
+          <th>3限</th>
+          <td data-day="月" data-period="3"></td>
+          <td data-day="火" data-period="3"></td>
+          <td data-day="水" data-period="3"></td>
+          <td data-day="木" data-period="3"></td>
+          <td data-day="金" data-period="3"></td>
+          <td data-day="土" data-period="3"></td>
+        </tr>
+        <tr>
+          <th>4限</th>
+          <td data-day="月" data-period="4"></td>
+          <td data-day="火" data-period="4"></td>
+          <td data-day="水" data-period="4"></td>
+          <td data-day="木" data-period="4"></td>
+          <td data-day="金" data-period="4"></td>
+          <td data-day="土" data-period="4"></td>
+        </tr>
+        <tr>
+          <th>5限</th>
+          <td data-day="月" data-period="5"></td>
+          <td data-day="火" data-period="5"></td>
+          <td data-day="水" data-period="5"></td>
+          <td data-day="木" data-period="5"></td>
+          <td data-day="金" data-period="5"></td>
+          <td data-day="土" data-period="5"></td>
+        </tr>
+        <tr>
+          <th>6限</th>
+          <td data-day="月" data-period="6"></td>
+          <td data-day="火" data-period="6"></td>
+          <td data-day="水" data-period="6"></td>
+          <td data-day="木" data-period="6"></td>
+          <td data-day="金" data-period="6"></td>
+          <td data-day="土" data-period="6"></td>
+        </tr>
+        <tr>
+          <th>7限</th>
+          <td data-day="月" data-period="7"></td>
+          <td data-day="火" data-period="7"></td>
+          <td data-day="水" data-period="7"></td>
+          <td data-day="木" data-period="7"></td>
+          <td data-day="金" data-period="7"></td>
+          <td data-day="土" data-period="7"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- リセットボタン：フォームとテーブルの内容をリセット -->
+<!--     <button type="button" id="resetButton" data-action="reset">リセット</button> -->
+  </main>
+  
+  <script src="../javascript/backendSimulator.js"></script>
+  <script src="../javascript/script.js"></script>
+  <script src="../javascript/waterPoint.js"></script>
+</body>
+</html>

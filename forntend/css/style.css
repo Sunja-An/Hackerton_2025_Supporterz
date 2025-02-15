@@ -1,0 +1,87 @@
+/* ベーススタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fff;
+
+}
+
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  max-width: 96lvw;
+  margin: 0 2lvw 2lvw;
+  min-height: 100lvh;
+  min-height: 110lvh;
+  padding: 20px 7lvw;
+  background-color: #fff;
+  border-radius: 8px;
+  font-family: 'MS Mincho', serif;
+  font-weight: 900;
+}
+
+/* 共通フォームセクションのスタイル */
+section {
+  margin-bottom: 20px;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+section form div {
+  margin-bottom: 10px;
+}
+
+section label {
+  display: inline-block;
+  width: 80px;
+  font-weight: bold;
+}
+
+section input,
+section select {
+  padding: 5px;
+  width: calc(100% - 90px);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* ボタン */
+button {
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #003060;
+}
+
+/* 時間割テーブル */
+table {
+  min-height: 50lvh;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
