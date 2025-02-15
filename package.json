@@ -1,0 +1,22 @@
+{
+  "name": "jikanwari",
+  "version": "0.1.0",
+  "description": "The Japanese Student's Timetable on School",
+  "scripts": {
+    "build:back": "docker-compose build nestjs-app",
+    "build:front": "docker-compose build nextjs-app",
+    "start:db": "docker-compose up mysql-db",
+    "start:back": "docker-compose up nestjs-app --renew-anon-volumes",
+    "start:front": "docker-compose up nextjs-app --renew-anon-volumes",
+    "clean": "docker-compose down -v"
+  },
+  "author": "Sunwoo An",
+  "contributors": [
+    {
+      "name": "Sunwoo An",
+      "email": "sunja1472@gmail.com",
+      "url": "https://www.github.com/Sunja-An"
+    }
+  ],
+  "license": "ISC"
+}
