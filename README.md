@@ -63,7 +63,7 @@
 
 <br>
 
-### 😎Yuta
+### 😎Yuto
 
 - **FrontEnd**
 
