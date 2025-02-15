@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新規登録画面</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
+    <main>
+      <div class="login-container">
+        <h2>新規登録</h2>
+        <form id="signup-form">
+          <div>
+            <label for="user-id">ID:</label>
+            <input type="text" id="user-id" placeholder="ID" required />
+          </div>
+          <div>
+            <label for="password">パスワード:</label>
+            <input type="password" id="password" placeholder="パスワード" required />
+          </div>
+          <div>
+            <label for="username">ユーザー名:</label>
+            <input type="text" id="username" placeholder="ユーザー名" required />
+          </div>
+          <div>
+            <label for="university">大学名:</label>
+            <input type="text" id="university" placeholder="大学名" required />
+          </div>
+          <button type="submit">登録</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- 外部JavaScriptファイルを読み込む -->
+    <script src="../js/signup.js"></script>
+  </body>
+</html>
