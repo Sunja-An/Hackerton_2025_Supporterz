@@ -27,7 +27,7 @@ services:
       - DB_USER=$MYSQL_DB_USERNAME
       - DB_PASSWORD=$MYSQL_DB_PASSWORD
       - DB_DATABASE=$MYSQL_DB_DATABASE
-      - DB_PORT=$MYSQLDB_DOCKER_PORT
+      - DB_PORT=$MYSQL_DB_DOCKER_PORT
     stdin_open: true
     tty: true
     volumes:

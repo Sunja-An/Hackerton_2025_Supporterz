@@ -1,11 +1,9 @@
-import { User } from 'src/typeorm';
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { AbstractEntity } from 'src/common/entites';
+import { User } from 'src/user/entities';
+import { Column, Entity, ManyToMany } from 'typeorm';
 
-@Entity()
-export class Lecture {
-  @PrimaryGeneratedColumn({ type: 'bigint' })
-  lecture_id: number;
-
+@Entity({ name: 'lectures' })
+export class Lecture extends AbstractEntity {
   @Column({ nullable: false, default: '' })
   lecture_name: string;
 
@@ -21,9 +19,6 @@ export class Lecture {
   @Column({ nullable: false, default: '2' })
   lecture_end_time: number;
 
-  @ManyToMany(() => User, (user) => user.lectures, {
-    onDelete: 'NO ACTION',
-    onUpdate: 'NO ACTION',
-  })
-  students?: User[];
+  @ManyToMany(() => User, (user) => user.lectures)
+  students: User[];
 }

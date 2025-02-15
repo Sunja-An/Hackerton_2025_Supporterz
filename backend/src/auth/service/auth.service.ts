@@ -1,5 +1,5 @@
 import { JwtService } from '@nestjs/jwt';
-import { UserService } from './../user/user.service';
+import { UserService } from '../../user/service/user.service';
 import {
   BadRequestException,
   Injectable,
@@ -14,35 +14,31 @@ const scrypt = promisify(_scrypt);
 @Injectable()
 export class AuthService {
   constructor(
-    private userService: UserService,
-    private jwtService: JwtService,
+    private readonly userService: UserService,
+    private readonly jwtService: JwtService,
   ) {}
 
   async signUp(request: CreateUserDto): Promise<any> {
-    const users = await this.userService.find(request.email);
-    if (users.length) {
+    const users = await this.userService.findEmail(request.email);
+    if (users) {
       throw new BadRequestException('Email in use');
     }
-
-    // Hash the users password
-    // Generate a salt
     const salt = randomBytes(8).toString('hex');
-
-    // Hash the salt and password together
     const hash = (await scrypt(request.password, salt, 32)) as Buffer;
-
-    // Join the hashed result and the salt together
     const result = salt + '.' + hash.toString('hex');
-
-    // Create a new User and Save it
-    const user = await this.userService.userCreate(request.email, result);
-
-    // return the user
+    const user = await this.userService.userCreate(
+      request.email,
+      result,
+      request.username,
+    );
     return user;
   }
 
   async signIn(email: string, pass: string): Promise<any> {
-    const user = await this.userService.findOne(email);
+    const user = await this.userService.findEmail(email);
+    if (user) {
+      throw new BadRequestException('Too Many People');
+    }
     if (user.password != pass)
       throw new UnauthorizedException('Password is wrong');
 

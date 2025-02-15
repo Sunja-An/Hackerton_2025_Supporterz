@@ -1,21 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from './app.module';
+import { AppModule } from './app/app.module';
+import { ValidationPipe } from '@nestjs/common';
+
+import { setupSwagger } from './utils';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
-  const config = new DocumentBuilder()
-    .setTitle('JIKANWARI')
-    .setDescription('The JIKANWARI API description')
-    .setVersion('0.1.0')
-    .addTag('Nest.js')
-    .build();
-
-  const documentFactory = () => SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, documentFactory, {
-    jsonDocumentUrl: 'swagger-ui',
-  });
+  setupSwagger(app);
 
   await app.listen(8080);
 }
