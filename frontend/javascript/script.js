@@ -45,7 +45,7 @@ document.getElementById('submitLecture').addEventListener('click', function () {
   if (hasLecture === 1) {
     tableCell.textContent = lectureName;
   } else {
-    tableCell.textContent = "講義なし";
+    tableCell.textContent = "該当講義なし";
   }
 });
 
@@ -62,3 +62,4 @@ document.getElementById('resetButton').addEventListener('click', function () {
     cell.textContent = "";
   });
 });
+

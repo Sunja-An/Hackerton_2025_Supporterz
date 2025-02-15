@@ -2,7 +2,8 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #fff;
+
 }
 
 header {
@@ -13,19 +14,23 @@ header {
 }
 
 main {
-  max-width: 75lvw;
-  margin: 30px auto;
-  padding: 20px;
+  max-width: 96lvw;
+  margin: 0 2lvw 2lvw;
+  min-height: 100lvh;
+  min-height: 110lvh;
+  padding: 20px 7lvw;
   background-color: #fff;
   border-radius: 8px;
+  font-family: 'MS Mincho', serif;
+  font-weight: 900;
 }
 
 /* 共通フォームセクションのスタイル */
 section {
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 25px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 25px;
 }
 
 section form div {
@@ -43,7 +48,7 @@ section select {
   padding: 5px;
   width: calc(100% - 90px);
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 /* ボタン */
@@ -54,7 +59,7 @@ button {
   padding: 10px 20px;
   margin: 10px 0;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 16px;
 }
 
@@ -64,6 +69,7 @@ button:hover {
 
 /* 時間割テーブル */
 table {
+  min-height: 50lvh;
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -79,3 +85,4 @@ table td {
 table th {
   background-color: #f0f0f0;
 }
+
