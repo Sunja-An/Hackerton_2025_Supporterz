@@ -8,25 +8,23 @@
   </head>
   <body>
     <main>
-      <div class="login-container">
-        <h2>ログイン</h2>
+      <div class="form-wrapper">
+        <h1>Login</h1>
         <form>
-          <div>
-            <label for="username">ユーザー名</label>
-            <input type="text" id="username" placeholder="ユーザー名" required />
+          <div class="form-item">
+            <label for="ID"></label>
+            <input type="ID" name="ID" required="required" placeholder="ID" />
           </div>
-
-          <div>
-            <label for="password">パスワード</label>
-            <input type="password" id="password" placeholder="パスワード" required />
+          <div class="form-item">
+            <label for="password"></label>
+            <input type="password" name="password" required="required" placeholder="Password" />
           </div>
-          <button type="submit">ログイン</button>
+          <div class="button-panel">
+            <input type="submit" class="button" title="Sign In" value="Sign In" />
+          </div>
         </form>
-        <div class="link">
-          <a href="./reset.html">パスワードをお忘れの方</a>
-        </div>
-        <div class="link">
-          <a href="./signup.html">新規登録の方</a>
+        <div class="form-footer">
+          <p><a href="./signup.html">アカウントを作成</a></p>
         </div>
       </div>
     </main>
