@@ -15,14 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 仮の認証処理
-    if (userId === 'admin' && password === 'password123') {
+    if (userId === 'yyy' && password === '123') {
       // 仮のJWTを作成（本番ではサーバーから取得する）
       const fakeToken = createFakeJWT(userId);
 
       // トークンをローカルストレージに保存
       localStorage.setItem('jwtToken', fakeToken);
 
-      alert('ログイン成功！');
       window.location.href = 'index.html'; // ログイン成功時にindex.htmlへ
     } else {
       alert('IDまたはパスワードが間違っています。');

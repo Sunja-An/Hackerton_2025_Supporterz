@@ -10,6 +10,11 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: #fafafa;
+  background-image: url('../photo/cherryblossoms.jpeg'); /* 画像のパスを指定 */
+  background-size: cover; /* 画面いっぱいに表示 */
+  background-position: center; /* 画像の位置を中央に */
+  background-repeat: no-repeat; /* 繰り返しを無効に */
+  z-index: -1;
 }
 
 .registration {
