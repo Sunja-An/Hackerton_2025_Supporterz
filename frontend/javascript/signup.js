@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault(); // フォームのデフォルト送信を防ぐ
 
     // 仮の登録処理
-    alert('登録が完了しました！ログイン画面に移動します。');
+    alert('登録が完了しました！ログイン画面に移動します！');
 
     console.log('ログイン画面へ即時遷移');
 
