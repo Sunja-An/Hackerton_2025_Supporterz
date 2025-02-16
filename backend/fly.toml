@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for backend-billowing-dust-5551 on 2025-02-16T14:02:21+09:00
+# fly.toml app configuration file generated for backend-patient-frost-8753 on 2025-02-16T14:21:01+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'backend-billowing-dust-5551'
+app = 'backend-patient-frost-8753'
 primary_region = 'nrt'
 
 [build]
