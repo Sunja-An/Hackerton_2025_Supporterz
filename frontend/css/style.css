@@ -2,8 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #fff;
-
+  background-color: #f4f4f4;
 }
 
 header {
@@ -25,7 +24,7 @@ main {
   font-weight: 900;
 }
 
-/* 共通フォームセクションのスタイル */
+/* フォームセクション */
 section {
   margin-bottom: 20px;
   padding: 25px;
@@ -51,6 +50,21 @@ section select {
   border-radius: 8px;
 }
 
+/* 検索結果リスト */
+#lectureResults {
+  margin-top: 20px;
+}
+
+.lecture-item {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.lecture-item button {
+  margin-top: 5px;
+}
+
 /* ボタン */
 button {
   background-color: #004080;
@@ -69,7 +83,6 @@ button:hover {
 
 /* 時間割テーブル */
 table {
-  min-height: 50lvh;
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -85,4 +98,3 @@ table td {
 table th {
   background-color: #f0f0f0;
 }
-

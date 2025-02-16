@@ -7,22 +7,23 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- ヘッダー：アプリケーション名 -->
+  <!-- ヘッダー -->
   <header>
     <h1>講義計画書時間割作成ツール</h1>
   </header>
 
   <main>
-    <!-- 講義情報送信用フォーム -->
+    <!-- 講義検索フォーム（lecture-form-section） -->
     <section id="lecture-form-section">
-      <form id="lectureForm">
+      <form id="lectureSearchForm">
         <div>
-          <label for="lectureName">講義名:</label>
-          <input type="text" id="lectureName" name="lectureName" required>
+          <label for="filterLectureName">講義名:</label>
+          <input type="text" id="filterLectureName" name="filterLectureName" placeholder="例: 英語読解">
         </div>
         <div>
-          <label for="dayOfWeek">曜日:</label>
-          <select id="dayOfWeek" name="dayOfWeek" required>
+          <label for="filterDay">曜日:</label>
+          <select id="filterDay" name="filterDay">
+            <option value="">--</option>
             <option value="月">月</option>
             <option value="火">火</option>
             <option value="水">水</option>
@@ -32,8 +33,9 @@
           </select>
         </div>
         <div>
-          <label for="period">時限:</label>
-          <select id="period" name="period" required>
+          <label for="filterPeriod">時限:</label>
+          <select id="filterPeriod" name="filterPeriod">
+            <option value="">--</option>
             <option value="1">1限</option>
             <option value="2">2限</option>
             <option value="3">3限</option>
@@ -44,27 +46,28 @@
           </select>
         </div>
         <div>
-          <label for="lecturerName">講師名:</label>
-          <input type="text" id="lecturerName" name="lecturerName" required>
+          <label for="filterInstructor">講師名:</label>
+          <input type="text" id="filterInstructor" name="filterInstructor" placeholder="例: 笠原">
         </div>
         <div>
-          <!-- 講義情報送信ボタン（後方処理の発火点としてdata属性を付与） -->
-          <button type="button" id="submitLecture" data-action="send-lecture-data">講義情報送信</button>
+          <button type="button" id="searchLecture" data-action="search-lecture">検索</button>
         </div>
       </form>
+      <!-- 検索結果表示エリア -->
+      <div id="lectureResults"></div>
     </section>
 
     <!-- おすすめ講義を表示する時間割テーブル -->
     <table id="scheduleTable" data-type="schedule">
       <thead>
         <tr>
-          <th style="width: 10%;"></th>
-          <th style="width: 15%;">月</th>
-          <th style="width: 15%;">火</th>
-          <th style="width: 15%;">水</th>
-          <th style="width: 15%;">木</th>
-          <th style="width: 15%;">金</th>
-          <th style="width: 15%;">土</th>
+          <th style="width: 4%;"></th>
+          <th style="width: 16%;">月</th>
+          <th style="width: 16%;">火</th>
+          <th style="width: 16%;">水</th>
+          <th style="width: 16%;">木</th>
+          <th style="width: 16%;">金</th>
+          <th style="width: 16%;">土</th>
         </tr>
       </thead>
       <tbody>
@@ -134,13 +137,10 @@
       </tbody>
     </table>
 
-    <!-- リセットボタン：フォームとテーブルの内容をリセット -->
+    <!-- リセットボタン：検索フォーム、検索結果、時間割テーブルをクリア -->
 <!--     <button type="button" id="resetButton" data-action="reset">リセット</button> -->
   </main>
   
-  <script src="../javascript/backendSimulator.js"></script>
   <script src="../javascript/script.js"></script>
-  <script src="../javascript/cute.js"></script>
 </body>
 </html>
-
