@@ -14,11 +14,31 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // 仮の認証処理（本番ではAPIリクエストなどに置き換える）
+    // 仮の認証処理
     if (userId === 'admin' && password === 'password123') {
+      // 仮のJWTを作成（本番ではサーバーから取得する）
+      const fakeToken = createFakeJWT(userId);
+
+      // トークンをローカルストレージに保存
+      localStorage.setItem('jwtToken', fakeToken);
+
+      alert('ログイン成功！');
       window.location.href = 'index.html'; // ログイン成功時にindex.htmlへ
     } else {
       alert('IDまたはパスワードが間違っています。');
     }
   });
+
+  // 仮のJWTを作成する関数
+  function createFakeJWT(userId) {
+    const header = { alg: 'HS256', typ: 'JWT' };
+    const payload = { sub: userId, iat: Date.now() / 1000, exp: (Date.now() + 3600000) / 1000 }; // 1時間後に有効期限切れ
+
+    // Base64エンコードする関数
+    function base64Encode(obj) {
+      return btoa(JSON.stringify(obj)).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
+    }
+
+    return `${base64Encode(header)}.${base64Encode(payload)}.signature_placeholder`;
+  }
 });
