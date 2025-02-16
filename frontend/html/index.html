@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>講義計画書時間割作成ツール</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
   <!-- ヘッダー -->
   <header>
@@ -13,49 +15,6 @@
   </header>
 
   <main>
-    <!-- 講義検索フォーム（lecture-form-section） -->
-    <section id="lecture-form-section">
-      <form id="lectureSearchForm">
-        <div>
-          <label for="filterLectureName">講義名:</label>
-          <input type="text" id="filterLectureName" name="filterLectureName" placeholder="例: 英語読解">
-        </div>
-        <div>
-          <label for="filterDay">曜日:</label>
-          <select id="filterDay" name="filterDay">
-            <option value="">--</option>
-            <option value="月">月</option>
-            <option value="火">火</option>
-            <option value="水">水</option>
-            <option value="木">木</option>
-            <option value="金">金</option>
-            <option value="土">土</option>
-          </select>
-        </div>
-        <div>
-          <label for="filterPeriod">時限:</label>
-          <select id="filterPeriod" name="filterPeriod">
-            <option value="">--</option>
-            <option value="1">1限</option>
-            <option value="2">2限</option>
-            <option value="3">3限</option>
-            <option value="4">4限</option>
-            <option value="5">5限</option>
-            <option value="6">6限</option>
-            <option value="7">7限</option>
-          </select>
-        </div>
-        <div>
-          <label for="filterInstructor">講師名:</label>
-          <input type="text" id="filterInstructor" name="filterInstructor" placeholder="例: 笠原">
-        </div>
-        <div>
-          <button type="button" id="searchLecture" data-action="search-lecture">検索</button>
-        </div>
-      </form>
-      <!-- 検索結果表示エリア -->
-      <div id="lectureResults"></div>
-    </section>
 
     <!-- おすすめ講義を表示する時間割テーブル -->
     <table id="scheduleTable" data-type="schedule">
@@ -137,11 +96,56 @@
       </tbody>
     </table>
 
+
+    <!-- 講義検索フォーム（lecture-form-section） -->
+    <section id="lecture-form-section" style="margin-top: 30px;">
+      <form id="lectureSearchForm">
+        <div>
+          <label for="filterLectureName">講義名:</label>
+          <input type="text" id="filterLectureName" name="filterLectureName" placeholder="例: 英語読解">
+        </div>
+        <div>
+          <label for="filterDay">曜日:</label>
+          <select id="filterDay" name="filterDay">
+            <option value="">--</option>
+            <option value="月">月</option>
+            <option value="火">火</option>
+            <option value="水">水</option>
+            <option value="木">木</option>
+            <option value="金">金</option>
+            <option value="土">土</option>
+          </select>
+        </div>
+        <div>
+          <label for="filterPeriod">時限:</label>
+          <select id="filterPeriod" name="filterPeriod">
+            <option value="">--</option>
+            <option value="1">1限</option>
+            <option value="2">2限</option>
+            <option value="3">3限</option>
+            <option value="4">4限</option>
+            <option value="5">5限</option>
+            <option value="6">6限</option>
+            <option value="7">7限</option>
+          </select>
+        </div>
+        <div>
+          <label for="filterInstructor">講師名:</label>
+          <input type="text" id="filterInstructor" name="filterInstructor" placeholder="例: 笠原">
+        </div>
+        <div>
+          <button type="button" id="searchLecture" data-action="search-lecture">検索</button>
+        </div>
+      </form>
+      <!-- 検索結果表示エリア -->
+      <div id="lectureResults"></div>
+    </section>
     <!-- リセットボタン：検索フォーム、検索結果、時間割テーブルをクリア -->
-<!--     <button type="button" id="resetButton" data-action="reset">リセット</button> -->
+    <!--     <button type="button" id="resetButton" data-action="reset">リセット</button> -->
   </main>
-  
+
   <script src="../javascript/script.js"></script>
   <script src="../javascript/cute.js"></script>
 </body>
+
 </html>

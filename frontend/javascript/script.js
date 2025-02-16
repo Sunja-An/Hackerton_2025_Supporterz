@@ -123,9 +123,8 @@ let lectureList = [
       resultsDiv.appendChild(div);
     });
   });
-  
   // ④ 登録ボタンが押されたときに、講義情報を時間割テーブルに追加する関数
-  function registerLecture(item) {
+function registerLecture(item) {
     // item["Schedule"]は例:"金４"となっているので、1文字目が曜日、残りが時限
     const scheduleStr = item["Schedule"];
     const day = scheduleStr.charAt(0);          // 例: "金"
@@ -145,14 +144,15 @@ let lectureList = [
     const cell = document.querySelector(selector);
     if (cell) {
       console.log("registerLecture: セルが見つかりました:", cell);
-      // セルに講義名を表示（必要に応じて講師名等も追加可能）
-      cell.textContent = item["Lecture Name"];
-      console.log("registerLecture: セルに登録された内容:", cell.textContent);
+      // セルに講義名と講師名を2行で表示するため、innerHTMLを使用して<br>で改行
+      cell.innerHTML = item["Lecture Name"] + "<br>" + item["Instructor"];
+      console.log("registerLecture: セルに登録された内容:", cell.innerHTML);
     } else {
       alert(`スケジュール ${item["Schedule"]} のセルが見つかりません。`);
       console.error("registerLecture: セルが見つからない。");
     }
   }
+  
   
   // ⑤ リセットボタンのイベントリスナー
   document.getElementById('resetButton').addEventListener('click', function() {
