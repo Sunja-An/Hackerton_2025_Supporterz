@@ -43,13 +43,13 @@ export class LectureService {
     return await this.userRepository.save(user);
   }
 
-  getLecture(id: number) {
+  async getLecture(id: number) {
     if (!id) return null;
     return this.lectureRepository.findOneBy({ lecture_id: id });
   }
 
-  getLectureList() {
-    return this.lectureRepository.find();
+  async getLectureList() {
+    return this.lectureRepository.query('SELECT * FROM lectures;');
   }
 
   createLecture(data: CreateLectureDTO) {

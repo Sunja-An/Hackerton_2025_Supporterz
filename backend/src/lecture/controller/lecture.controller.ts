@@ -17,18 +17,18 @@ export class LectureController {
   @HttpCode(HttpStatus.CREATED)
   @Post('')
   createLecture(@Body() request: CreateLectureDTO) {
-    this.lectureService.createLecture(request);
+    return this.lectureService.createLecture(request);
   }
 
   @HttpCode(HttpStatus.OK)
   @Get('')
   getLectureList() {
-    this.lectureService.getLectureList();
+    return this.lectureService.getLectureList();
   }
 
   @HttpCode(HttpStatus.OK)
-  @Get(':id')
+  @Get('/:id')
   getLecture(@Param('id') id: string) {
-    this.lectureService.getLecture(parseInt(id));
+    return this.lectureService.getLecture(parseInt(id));
   }
 }
