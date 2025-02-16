@@ -12,10 +12,10 @@ import {
 
 @Entity({ name: 'users' })
 export class User extends AbstractEntity {
-  @Column({ nullable: false, default: '', unique: true })
+  @Column({ nullable: false, default: '' })
   username: string;
 
-  @Column({ name: 'email_address', nullable: false, default: '', unique: true })
+  @Column({ name: 'email', nullable: false, default: '', unique: true })
   email: string;
 
   @Column({ nullable: false, default: '' })

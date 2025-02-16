@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { join } from 'path';
+import { Lecture } from 'src/lecture/entities';
+import { User } from 'src/user/entities';
 
 @Module({
   imports: [
@@ -10,14 +11,8 @@ import { join } from 'path';
       port: 3306,
       username: 'root',
       password: '1234',
-      database: 'mysql',
-      entities: [
-        join(
-          __dirname,
-          '../entities/*.entity' +
-            (process.env.NODE_ENV === 'production' ? '.js' : '.ts'),
-        ),
-      ],
+      database: 'JIKANWARI',
+      entities: [User, Lecture],
       synchronize: false,
     }),
   ],

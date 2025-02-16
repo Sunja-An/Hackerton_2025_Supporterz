@@ -1,9 +1,12 @@
 import { AbstractEntity } from 'src/common/entites';
 import { User } from 'src/user/entities';
-import { Column, Entity, ManyToMany } from 'typeorm';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'lectures' })
-export class Lecture extends AbstractEntity {
+export class Lecture {
+  @PrimaryGeneratedColumn({ type: 'bigint' })
+  lecture_id: number;
+
   @Column({ nullable: false, default: '' })
   lecture_name: string;
 

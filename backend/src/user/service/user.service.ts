@@ -11,6 +11,7 @@ export class UserService {
   ) {}
 
   userCreate(email: string, password: string, username: string): Promise<any> {
+    console.log(__dirname);
     const user = this.userRepository.create({ email, password, username });
     return this.userRepository.save(user);
   }

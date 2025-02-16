@@ -29,12 +29,12 @@ export class LectureService {
     }
 
     const lecture = await this.lectureRepository.findOne({
-      where: { id: lectureId },
+      where: { lecture_id: lectureId },
     });
     if (!lecture) {
       throw new NotFoundException(`Lecture with ID ${lectureId} not found`);
     }
-    if (user.lectures.some((lecture) => lecture.id === lectureId)) {
+    if (user.lectures.some((lecture) => lecture.lecture_id === lectureId)) {
       throw new BadRequestException(
         `Lecture with ID ${lectureId} is already added to the user`,
       );
@@ -45,7 +45,7 @@ export class LectureService {
 
   getLecture(id: number) {
     if (!id) return null;
-    return this.lectureRepository.findOneBy({ id: id });
+    return this.lectureRepository.findOneBy({ lecture_id: id });
   }
 
   getLectureList() {
