@@ -2,26 +2,35 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #f4f8ff;
+  max-width: 100lvw;
+  max-height: 150lvh;
+  background-image: url('../photo/sea.jpeg'); /* 画像のパスを指定 */
+  background-size: cover; /* 画面いっぱいに表示 */
+  background-position: center; /* 画像の位置を中央に */
+  background-repeat: no-repeat; /* 繰り返しを無効に */
+  z-index: -1;
 }
 
 header {
   background-color: #004080;
-  color: #fff;
+  color: #f4f8ff;
   padding: 20px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 main {
   max-width: 96lvw;
   margin: 0 2lvw 2lvw;
   min-height: 100lvh;
-  min-height: 110lvh;
+  max-height: 130lvh;
   padding: 20px 7lvw;
-  background-color: #fff;
+  background-color: #f4f8ff;
   border-radius: 8px;
   font-family: 'MS Mincho', serif;
   font-weight: 900;
+  opacity: 0.9; /* 透明度の調整 */
 }
 
 /* フォームセクション */
@@ -68,7 +77,7 @@ section select {
 /* ボタン */
 button {
   background-color: #004080;
-  color: #fff;
+  color: #f4f8ff;
   border: none;
   padding: 10px 20px;
   margin: 10px 0;
@@ -94,6 +103,8 @@ table td {
   padding: 10px;
   text-align: center;
   line-height: 24px; /* 24pxの行間 */
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+
 }
 
 table th {
